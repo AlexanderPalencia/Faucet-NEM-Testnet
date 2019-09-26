@@ -1,2 +1,2 @@
-# faucet-NEM-Test-Net
+# Faucet-NEM-Testnet
 Faucet web application for NEM testnet, develop in Node JS, Angular, Express and NEM-SDK
