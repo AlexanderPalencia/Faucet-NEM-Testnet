@@ -1,0 +1,24 @@
+{
+  "name": "Faucet-NEM-Testnet",
+  "version": "1.0.0",
+  "description": "Faucet web application for NEM testnet, develop in Node JS, Angular, Express and NEM-SDK",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexanderPalencia/Faucet-NEM-Testnet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexanderPalencia/Faucet-NEM-Testnet/issues"
+  },
+  "homepage": "https://github.com/AlexanderPalencia/Faucet-NEM-Testnet#readme",
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "nem-sdk": "^1.6.7"
+  }
+}
