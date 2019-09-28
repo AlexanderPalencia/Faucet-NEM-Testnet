@@ -1,9 +1,13 @@
 var express = require('express');
 require('dotenv').config({path: '../config.env'});
+var cors = require('cors')
 let nem = require("nem-sdk").default;
 var app = express();
 
+app.use(cors());
+
 app.get('/', function (req, res) {
+  console.log("access to health end-point");
   res.send('API Alex, put a valid end-point');
 });
 
