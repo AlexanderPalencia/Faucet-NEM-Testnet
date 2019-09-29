@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html>
     <head>
-        Faucet Alex
+        <title>Faucet Alex</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta name="description" content="Faucet NEM Tesnet">
+        <meta name="keywords" content="NEM,Faucet,Nem Tesnet">
+        <meta name="author" content="Alexander Palencia">
+        <link rel="stylesheet" href="w3.css">
+        <link rel="stylesheet" href="style.css">
         <script src="index.js"></script>
     </head>
     <body>
+        <div class="w3-container w3-teal"">
+            <h2>Faucet XEM for the Testnet</h2>
+            Develop by: Alexander Palencia
+        </div>
+        <div class="w3-container w3-red w3-border w3-border-blue w3-round w3-card w3-center">
+            <form>
+            Address:<br>
+            <input type="text" name="firstname" id="add">
+            <br>
+            Message:<br>
+            <input type="text" name="lastname" id="msg">
+            </form>
+            <button type="button" id="myBtn" onclick="myFunction()">Send</button>
+        </div>
 
-        <h2>Faucet XEM for the Testnet</h2>
-        <form>
-        Address:<br>
-        <input type="text" name="firstname" id="add">
-        <br>
-        Message:<br>
-        <input type="text" name="lastname" id="msg">
-        </form>
-        <button type="button" id="myBtn" onclick="myFunction()">Send</button>
-
-        <p id="info" hidden>Info Transaction</p>
-        <p id="info" hidden>Info Transaction</p>
+        
+        <div class="w3-panel w3-green" hidden>
+                <p>I am a panel.</p>
+                <p id="info" hidden>Info Transaction</p>
+                <p id="info1" hidden>Info Transaction</p>
+        </div> 
+        <div class="w3-panel w3-red w3-card">
+                <p>I am a panel.</p>
+                <p id="info" hidden>Info Transaction</p>
+                <p id="info1" hidden>Info Transaction</p>
+        </div> 
+       
         
     </body>
 </html>
