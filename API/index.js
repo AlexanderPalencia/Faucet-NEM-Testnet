@@ -32,8 +32,8 @@ app.get('/faucet', function (req, res) {
     console.log("New TimeStampt",ts);
     // sendParams(commonObj, prepareObj, endpointObj)
     nem.model.transactions.send(objCommon, prepare, endpoint).then((resTran)=>{
-      console.log("Success transaction", resTran);
-      res.send('Holis');
+      console.log("Success transaction");
+      res.send(transferTransaction);
     },(err)=>{
         console.log(err);
     });
