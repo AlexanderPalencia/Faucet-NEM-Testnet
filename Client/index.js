@@ -20,6 +20,7 @@ async function myFunction(){
             .then(jsonObj => {
                 let DOMError = document.getElementById("error");
                 let DOMSucc = document.getElementById("succ");
+                let DOMTimeError = document.getElementById("timeError");
                 alert(JSON.stringify(jsonObj));
                 if(jsonObj.error){
                     DOMSucc.hidden = true;
@@ -37,6 +38,19 @@ async function myFunction(){
                     DOMAmount.innerText = jsonObj.amount;
                     DOMToAdd.innerText = jsonObj.recipient;
                     DOMSucc.hidden = false;
+                    if(jsonObj.errorTime){
+                        DOMSucc.hidden = true;
+                        DOMAddError.hidden = true;
+                        DOMError.hidden = true;
+                        let DOMTimeMsg = document.getElementById("timeMsg");
+                        DOMTimeMsg.innerText = jsonObj.errorTime;
+                        DOMTimeError.hidden = false;
+                    }else{
+                        DOMSucc.hidden = true;
+                        DOMAddError.hidden = true;
+                        DOMError.hidden = true;
+                        DOMTimeError.hidden = true;
+                    }
                 }
             });
         }
