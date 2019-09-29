@@ -11,13 +11,35 @@ app.get('/', function (req, res) {
   res.send('API Alex, put a valid end-point');
 });
 
+let ArrayAddress = [];
 app.get('/faucet', function (req, res) {
   // Queriy Params
   let address = req.query.add;
   let msg = req.query.msg;
   let randomAmount = Math.floor((Math.random() * 20) + 1);
-  var isFromNetwork = nem.model.address.isFromNetwork(address, nem.model.network.data.testnet.id);
-  console.log("AQUIE JOVEN ", isFromNetwork);
+  console.log("Tamano ",ArrayAddress.length);
+  if(ArrayAddress.length != 0){
+    ArrayAddress.forEach((currentValue, index, array)=>{
+      console.log("mierda", index);
+      if(currentValue.add == address){
+        let Now = Date.now();
+        if(Now < currentValue.time + 60000){
+          let objerror = {error: "Can't make another transaction has to pass an hour"};
+          console.log('Invalidate for time',objerror);
+          res.send(JSON.stringify(objerror));
+        }else{
+          ArrayAddress.splice(index-1,1);
+        }
+      }else{
+        let objAdd = {add: address, time: Date.now()};
+        ArrayAddress.push(objAdd);
+      }
+    });
+  }else{
+    console.log("Inicio"); 
+    let objAdd = {add: address, time: Date.now()};
+    ArrayAddress.push(objAdd);
+  }
 
   // Transfer XEM
   let endpoint  = nem.model.objects.create("endpoint")(nem.model.nodes.defaultTestnet, nem.model.nodes.defaultPort);
