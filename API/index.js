@@ -16,6 +16,8 @@ app.get('/faucet', function (req, res) {
   let address = req.query.add;
   let msg = req.query.msg;
   let randomAmount = Math.floor((Math.random() * 20) + 1);
+  var isFromNetwork = nem.model.address.isFromNetwork(address, nem.model.network.data.testnet.id);
+  console.log("AQUIE JOVEN ", isFromNetwork);
 
   // Transfer XEM
   let endpoint  = nem.model.objects.create("endpoint")(nem.model.nodes.defaultTestnet, nem.model.nodes.defaultPort);
@@ -35,10 +37,14 @@ app.get('/faucet', function (req, res) {
       console.log("Success transaction");
       res.send(transferTransaction);
     },(err)=>{
-        console.log(err);
+        let errobj = {error: err};
+        console.log('ERROR ',errobj);
+        res.send(JSON.stringify(errobj));
     });
   }, (err)=>{
-    console.log(err);
+    let errobj = {error: err};
+    console.log('ERROR ',errobj);
+    res.send(JSON.stringify(errobj));
   });
 });
 
