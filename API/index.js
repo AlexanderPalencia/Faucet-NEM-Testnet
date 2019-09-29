@@ -19,13 +19,13 @@ app.get('/faucet', function (req, res) {
   let invalid = false;
   let first = true;
   let randomAmount = Math.floor((Math.random() * 20) + 1);
-  console.log("Tamano ",ArrayAddress.length);
+  console.log("Array length",ArrayAddress.length);
   if(ArrayAddress.length != 0){
     ArrayAddress.forEach((currentValue, index, array)=>{
-      console.log("mierda", index);
       if(currentValue.add == address){
         first = true;
         let Now = Date.now();
+        console.log("Now timestampt ", Now, " Transaction Timestamp ", currentValue.time, " must pass at least ", currentValue.time + 300000);
         if(Now < currentValue.time + 300000){
           let objerror = {errorTime: "Can't make another transaction has to pass an hour"};
           console.log('Invalidate for time',objerror);
@@ -33,7 +33,7 @@ app.get('/faucet', function (req, res) {
           // res.send(JSON.stringify(objerror));
           // res.end();
         }else{
-          console.log('Borrando ');
+          console.log('Borrando');
           ArrayAddress.splice(index,1);
         }
       }else{
@@ -42,7 +42,7 @@ app.get('/faucet', function (req, res) {
       }
     });
   }else{
-    console.log("Inicio"); 
+    console.log("First element in array"); 
     let objAdd = {add: address, time: Date.now()};
     ArrayAddress.push(objAdd);
     first = false;
@@ -52,7 +52,6 @@ app.get('/faucet', function (req, res) {
     let objerror = {errorTime: "Can't make another transaction has to pass an hour"};
     res.send(JSON.stringify(objerror));
   }else{
-    console.log("No Paro Perro");
     // Transfer XEM
     let endpoint  = nem.model.objects.create("endpoint")(nem.model.nodes.defaultTestnet, nem.model.nodes.defaultPort);
     let objCommon = nem.model.objects.create("common")("", process.env.PK);
@@ -65,7 +64,6 @@ app.get('/faucet', function (req, res) {
       prepare.timeStamp = ts;
       const due = 60;
       prepare.deadline = ts + due * 60;
-      console.log("New TimeStampt",ts);
       // sendParams(commonObj, prepareObj, endpointObj)
       nem.model.transactions.send(objCommon, prepare, endpoint).then((resTran)=>{
         console.log("Success transaction");
@@ -76,17 +74,17 @@ app.get('/faucet', function (req, res) {
         res.send(transferTransaction);
       },(err)=>{
           let errobj = {error: err};
-          console.log('ERROR ',errobj);
+          console.log('ERROR ');
           res.send(JSON.stringify(errobj));
       });
     }, (err)=>{
       let errobj = {error: err};
-      console.log('ERROR ',errobj);
+      console.log('ERROR timestampt');
       res.send(JSON.stringify(errobj));
     });  
   }
 });
 
 app.listen(process.env.port, function () {
-  console.log('Example app listening on port 3000!');
+  console.log('Server app listening');
 });
