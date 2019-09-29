@@ -1,6 +1,4 @@
 "use strict";
-alert("hola2");
-
 async function myFunction(){
     let address = document.getElementById("add").value;
     let msg = document.getElementById("msg").value;
@@ -18,11 +16,21 @@ async function myFunction(){
             fetch(uri)
             .then(response => response.json())
             .then(jsonObj => {
-                alert("Valid Transaction");
-                let DOMInfo = document.getElementById("info");
-                DOMInfo.innerText = "aqui perro";            
-                DOMInfo.hidden = false;
-    
+                alert(JSON.stringify(jsonObj.error["data"].error));
+                if(jsonObj.error){
+                    let DOMError = document.getElementById("error");
+                    let DOMErrorCode = document.getElementById("errorCode");
+                    let DOMErrorMsg = document.getElementById("erroMsg");
+                    DOMErrorCode.innerText = jsonObj.error["data"].error;
+                    DOMErrorMsg.innerText = jsonObj.error["data"].message;
+                    DOMError.hidden = false;
+                    alert("error joven e ");
+                }else{  
+                    alert("Valid Transaction");
+                    let DOMInfo = document.getElementById("info");
+                    DOMInfo.innerText = "aqui perro";            
+                    DOMInfo.hidden = false;
+                }
             });
         }
     }else{
