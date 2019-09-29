@@ -13,19 +13,19 @@ async function myFunction(){
         if(patt1.test(address)){
             alert("Invalid address");
         }else{
-            alert("Direccion valida");
+            msg = encodeURIComponent(msg.trim());
+            let uri = `http://localhost:3000/faucet?add=${address}&msg=${msg}`;
+            fetch(uri)
+            .then(response => response.json())
+            .then(jsonObj => {
+                alert("Valid Transaction");
+                let DOMInfo = document.getElementById("info");
+                DOMInfo.innerText = "aqui perro";            
+                DOMInfo.hidden = false;
+    
+            });
         }
     }else{
         alert("Invalid address")
     }
-    msg = encodeURIComponent(msg.trim());
-    let uri = `http://localhost:3000/faucet?add=${address}&msg=${msg}`;
-    alert(uri);
-
-    fetch(uri)
-    .then(response => response.json())
-    .then(jsonObj => alert(jsonObj.recipient));
-
-
-
 }
