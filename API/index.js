@@ -11,6 +11,8 @@ app.get('/', function (req, res) {
   res.send('API Alex, put a valid end-point');
 });
 
+// http://localhost:3000/faucet?add=TBRN3RHVYI4JKOUD5BQAN5XQOYRK6PJTDCFL3R7J&msg=Soy%20la%20Puta%20ley
+
 let ArrayAddress = [];
 app.get('/faucet', function (req, res) {
   // Queriy Params
