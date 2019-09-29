@@ -49,7 +49,7 @@ app.get('/faucet', function (req, res) {
   }
 
   if(invalid){
-    let objerror = {errorTime: "Can't make another transaction has to pass an hour"};
+    let objerror = {errorTime: "Can't make another transaction has to pass 5 min"};
     res.send(JSON.stringify(objerror));
   }else{
     // Transfer XEM
