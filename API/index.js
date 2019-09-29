@@ -26,7 +26,7 @@ app.get('/faucet', function (req, res) {
       if(currentValue.add == address){
         first = true;
         let Now = Date.now();
-        if(Now < currentValue.time + 60000){
+        if(Now < currentValue.time + 300000){
           let objerror = {errorTime: "Can't make another transaction has to pass an hour"};
           console.log('Invalidate for time',objerror);
           invalid = true;
