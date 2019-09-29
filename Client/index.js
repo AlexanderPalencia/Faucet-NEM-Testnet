@@ -2,7 +2,7 @@
 async function myFunction(){
     let address = document.getElementById("add").value;
     let msg = document.getElementById("msg").value;
-    let patt = /^T/;
+    let patt = /^T|^t   /;
     let patt1 = /\W/;
     let patt2 = /\w{40,}/;
     let DOMError = document.getElementById("error");
