@@ -4,3 +4,4 @@ npm install express --save
 npm install cors -- save
 npm install nem-sdk -- save
 npm install dotenv -- save
+npm install firebase-admin -- save
