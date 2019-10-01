@@ -29,17 +29,34 @@
 
             <button onclick="Accordion('Demo1')" class="w3-button w3-hover-light-blue w3-round-large w3-border w3-border-indigo w3-margin-bottom">
                 How to use it
-            </button> <button onclick="Accordion('Demo2')" class="w3-button w3-hover-light-blue w3-round-large w3-border w3-border-indigo w3-margin-bottom">
+            </button> 
+            
+            <div id="Demo1" class="w3-container w3-hide w3-margin-bottom">
+
+                <ul class="w3-ul">
+                    <li>
+                        Enter a valid address for NEM testnet, this must start with T and does not have to contain -.
+                    </li>
+                    <li>
+                        You can claim up to 200 XEM (randomly) every 5 min.
+                    </li>
+                    <li>
+                        Do not abusive claims.
+                    </li>
+                    <li>
+                        You can send a message in the transaction.
+                    </li>
+                </ul>
+
+            </div>
+
+            <button onclick="Accordion('Demo2')" class="w3-button w3-hover-light-blue w3-round-large w3-border w3-border-indigo w3-margin-bottom">
                 Send XEM Back
             </button>
-                
-            <div id="Demo1" class="w3-container w3-hide">
-                    Enter a valid address for NEM testnet, this must start with T and does not have to contain -
-                    
-            </div>
-            
+
             <div id="Demo2" class="w3-container w3-hide">
-                <p>Some text..</p>
+                <p>Please send back the XEM to:</p>
+                <p>TCNTQNAK3SW5A2JU3FO7BBN44TMJK3X77JODMDC3</p>
             </div>
 
             <!-- Divs info -->
@@ -48,14 +65,14 @@
                 Amount: <label id="amount">Info Transaction</label> <br>
                 To a Address: <label id="toadd">Info Transaction</label>
             </div> 
-            <div class="w3-panel w3-card" id="addError" hidden>
+            <div class="w3-panel w3-card w3-red" id="addError" hidden>
                     Invalid address, please correct it
             </div>
-            <div class="w3-panel w3-card" id="timeError" hidden>
+            <div class="w3-panel w3-card w3-red" id="timeError" hidden>
                     Error Time:<br>
                     <label id="timeMsg">Time Transaction</label>
             </div> 
-            <div class="w3-panel w3-card" id="error" hidden>
+            <div class="w3-panel w3-card w3-red" id="error" hidden>
                     Error: <label id="errorCode">Info Transaction</label> <br>
                     Description:<label id="erroMsg">Info Transaction</label>
             </div> 
