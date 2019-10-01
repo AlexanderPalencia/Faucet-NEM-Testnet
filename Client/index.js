@@ -1,4 +1,5 @@
 "use strict";
+
 async function myFunction(){
     let address = document.getElementById("add").value;
     let msg = document.getElementById("msg").value;
@@ -65,3 +66,12 @@ async function myFunction(){
         DOMAddError.hidden = false;
     }
 }
+
+function Accordion(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+    } else {
+      x.className = x.className.replace(" w3-show", "");
+    }
+  }

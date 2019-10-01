@@ -13,23 +13,35 @@
     </head>
     <body>
         
-        <div class="w3-container w3-border w3-display-middle">
+        <div class="w3-container w3-border w3-display-middle w3-round-large" id="mainBody">
         
             <div class="w3-container">
                 <h2>Faucet NEM for the Testnet</h2>
-                Develop by: Alexander Palencia
             </div>
             
-            <div class="w3-container w3-border w3-border-blue w3-round w3-card w3-center w3-margin-bottom">
-                <form>
-                Address:<br>
-                <input type="text" name="firstname" id="add">
-                <br>
-                Message:<br>
-                <input type="text" name="lastname" id="msg">
+            <div class="w3-container w3-border w3-border-blue w3-round w3-card w3-center w3-margin-bottom w3-padding-24">
+                <form class="w3-container">
+                    <input class="w3-input" type="text" id="add" placeholder="Account address">
+                    <input class="w3-input" type="text" id="msg"placeholder="Message">
                 </form>
-                <button type="button" id="myBtn" onclick="myFunction()">Send</button>
+                <button class="w3-button w3-hover-light-blue w3-round-large w3-border w3-border-indigo w3-margin-top" id="myBtn" onclick="myFunction()">Send</button>
             </div>
+
+            <button onclick="Accordion('Demo1')" class="w3-button w3-hover-light-blue w3-round-large w3-border w3-border-indigo w3-margin-bottom">
+                How to use it
+            </button> <button onclick="Accordion('Demo2')" class="w3-button w3-hover-light-blue w3-round-large w3-border w3-border-indigo w3-margin-bottom">
+                Send XEM Back
+            </button>
+                
+            <div id="Demo1" class="w3-container w3-hide">
+                    Enter a valid address for NEM testnet, this must start with T and does not have to contain -
+                    
+            </div>
+            
+            <div id="Demo2" class="w3-container w3-hide">
+                <p>Some text..</p>
+            </div>
+
             <!-- Divs info -->
             <div class="w3-panel w3-green w3-card" id="succ" hidden>
                 Succes Transaction!<br>
@@ -47,6 +59,9 @@
                     Error: <label id="errorCode">Info Transaction</label> <br>
                     Description:<label id="erroMsg">Info Transaction</label>
             </div> 
+        </div>
+        <div class="w3-display-bottomright">
+            Develop by: Alexander Palencia
         </div>
     </body>
 </html>
