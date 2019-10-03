@@ -28,7 +28,7 @@ app.get('/faucet', function (req, res) {
         first = true;
         let Now = Date.now();
         console.log("Now timestampt ", Now, " Transaction Timestamp ", currentValue.time, " must pass at least ", currentValue.time + 300000);
-        if(Now < currentValue.time + 300000){
+        if(Now < currentValue.time + 30000){
           let objerror = {errorTime: "Can't make another transaction has to pass an hour"};
           console.log('Invalidate for time',objerror);
           invalid = true;

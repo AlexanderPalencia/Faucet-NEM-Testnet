@@ -1,4 +1,7 @@
 "use strict";
+let tableTransac = "";
+let tableTransacInit = "";
+init();
 
 async function myFunction(){
     let address = document.getElementById("add").value;
@@ -54,6 +57,7 @@ async function myFunction(){
                         DOMAmount.innerText = jsonObj.amount;
                         DOMToAdd.innerText = jsonObj.recipient;
                         DOMSucc.hidden = false;
+                        setTimeout(init, 180000)
                     }
                 }
             });
@@ -74,4 +78,33 @@ function Accordion(id) {
     } else {
       x.className = x.className.replace(" w3-show", "");
     }
+  }
+
+  function init(){
+      alert('Hola');
+      tableTransac = "<tr></tr><th>ID</th><th>Hash</th><th>Height Block</th></tr<th>";
+      let endPoint = `http://hugetestalice.nem.ninja:7890/account/transfers/all?address=TCNTQNAK3SW5A2JU3FO7BBN44TMJK3X77JODMDC3`;
+      fetch(endPoint)
+      .then(response => response.json())
+      .then(jsonObj => {
+        console.log('parcear', jsonObj);
+        let transactions = jsonObj.data;
+        for(var i = 0; i<=10; i++){
+            let dataAct = transactions[i].meta;
+            tableTransac += 
+            `<tr>
+                <td>${dataAct['id']}</td>
+                <td>${dataAct['hash'].data}</td>
+                <td>${dataAct['height']}</td>
+            </tr>`;
+        }
+        document.getElementById("table").innerHTML = tableTransac + tableTransacInit;
+        
+        // var node = document.createElement("LI");
+        // var textnode = document.createTextNode("Water232 safd asd fsa ");
+        // node.appendChild(textnode);
+        // document.getElementById("myList").appendChild(node);
+
+    });
+
   }

@@ -5,3 +5,8 @@ body{
     max-width:400px;
     color: #9191E9;
 }
+
+div{
+    background-color: #FFFDFD;
+    word-wrap: break-word;
+}

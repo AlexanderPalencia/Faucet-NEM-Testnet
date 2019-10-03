@@ -30,6 +30,10 @@
             <button onclick="Accordion('Demo1')" class="w3-button w3-hover-light-blue w3-round-large w3-border w3-border-indigo w3-margin-bottom">
                 How to use it
             </button> 
+
+            <button onclick="addTrans()" class="w3-button w3-hover-light-blue w3-round-large w3-border w3-border-indigo w3-margin-bottom">
+                transactios
+            </button> 
             
             <div id="Demo1" class="w3-container w3-hide w3-margin-bottom">
 
@@ -58,7 +62,6 @@
                 <p>Please send back the XEM to:</p>
                 <p>TCNTQNAK3SW5A2JU3FO7BBN44TMJK3X77JODMDC3</p>
             </div>
-
             <!-- Divs info -->
             <div class="w3-panel w3-green w3-card" id="succ" hidden>
                 Succes Transaction!<br>
@@ -76,6 +79,11 @@
                     Error: <label id="errorCode">Info Transaction</label> <br>
                     Description:<label id="erroMsg">Info Transaction</label>
             </div> 
+        </div>
+        <div class="w3-container">
+            <h2>Striped Table</h2>
+            <table class="w3-table w3-striped" id="table">
+            </table>
         </div>
         <div class="w3-display-bottomright">
             Develop by: Alexander Palencia
