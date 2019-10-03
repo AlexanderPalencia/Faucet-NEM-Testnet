@@ -70,3 +70,5 @@ For Deploy-hosting in firebase see [here](https://github.com/AlexanderPalencia/F
 * safety feature
     * API-Local: Global envioremnt that save timestamp of a transaction, this to prevent that the user make multples call.
     * API-Firebase: Timestamp of the transaction is save in Firebase DB for testing purpose is block every 5 min.
+
+## alexanderpalencia.me/faucet
