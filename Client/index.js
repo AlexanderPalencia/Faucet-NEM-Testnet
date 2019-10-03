@@ -81,15 +81,13 @@ function Accordion(id) {
   }
 
   function init(){
-      alert('Hola');
       tableTransac = "<tr></tr><th>ID</th><th>Hash</th><th>Height Block</th></tr<th>";
       let endPoint = `http://hugetestalice.nem.ninja:7890/account/transfers/all?address=TCNTQNAK3SW5A2JU3FO7BBN44TMJK3X77JODMDC3`;
       fetch(endPoint)
       .then(response => response.json())
       .then(jsonObj => {
-        console.log('parcear', jsonObj);
         let transactions = jsonObj.data;
-        for(var i = 0; i<=10; i++){
+        for(var i = 0; i<=14; i++){
             let dataAct = transactions[i].meta;
             tableTransac += 
             `<tr>
@@ -99,12 +97,6 @@ function Accordion(id) {
             </tr>`;
         }
         document.getElementById("table").innerHTML = tableTransac + tableTransacInit;
-        
-        // var node = document.createElement("LI");
-        // var textnode = document.createTextNode("Water232 safd asd fsa ");
-        // node.appendChild(textnode);
-        // document.getElementById("myList").appendChild(node);
-
     });
 
   }
