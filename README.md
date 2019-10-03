@@ -25,12 +25,12 @@ For Deploying-Hosting purpose you will need to have a firebase account with [bla
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+A step by step series of examples that tell you how to get a development env running locally for deployin and hostin in firebase function see [here](https://github.com/AlexanderPalencia/Faucet-NEM-Testnet/tree/master/API-Firebase).
 
-Say what the step will be
-
+First clone or fork this repository.
+Second navigate to the folder
 ```
-Fork this repository
+cd Faucet-NEM-Testnet
 ```
 Install dependencies.
 ```
@@ -42,9 +42,22 @@ This will install the following dependecies:
 * nem-sdk
 * dotenv
 * firebase
+Third create config.env file for more security and fill with your private key of the wallet and port like this:
 ```
-cd API-
+PK=PrivateKeyWallet
+port=#
 ```
+Fourth navigate to API-Local and run index.js
+```
+cd API-Local
+node index.js
+```
+fifth navigate to Client and open index.html in your browser.
+```
+cd Client
+index.html
+```
+For Deploy-hosting in firebase see [here](https://github.com/AlexanderPalencia/Faucet-NEM-Testnet/tree/master/API-Firebase).
 
 ## Deployment
 
