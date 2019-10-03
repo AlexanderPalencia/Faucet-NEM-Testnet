@@ -65,4 +65,8 @@ For Deploy-hosting in firebase see [here](https://github.com/AlexanderPalencia/F
 * XEM can be ordered every 5 min (for testing you can change this easily).
 * XEM are send randomly between 1 or 20 XEM every transaction.
 * Both Application (Client and API) handle errors these can be seen in the client and in the console of your API.
-* 
+* You can see the last 15 transactions these are updated automatically every 1.30.
+* You can send a message with the transaction.
+* safety feature
+    * API-Local: Global envioremnt that save timestamp of a transaction, this to prevent that the user make multples call.
+    * API-Firebase: Timestamp of the transaction is save in Firebase DB for testing purpose is block every 5 min.
