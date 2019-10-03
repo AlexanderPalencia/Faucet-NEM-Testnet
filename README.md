@@ -60,9 +60,9 @@ index.html
 ```
 For Deploy-hosting in firebase see [here](https://github.com/AlexanderPalencia/Faucet-NEM-Testnet/tree/master/API-Firebase).
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
+## Supported features and usability
+### XEM can be ordered every 5 min (for testing you can change this easily).
+### XEM are send randomly between 1 or 20 XEM every transaction.
+### 
 
 
