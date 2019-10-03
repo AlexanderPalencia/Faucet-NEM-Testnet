@@ -1,5 +1,5 @@
 # Faucet-NEM-Testnet
-Faucet web application for NEM testnet local and web deployment proyect.
+Faucet web application for NEM testnet, local test and web deployment-hosting proyect.
 
 ## Built With
 ### Client
