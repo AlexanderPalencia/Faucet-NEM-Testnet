@@ -42,6 +42,7 @@ This will install the following dependecies:
 * nem-sdk
 * dotenv
 * firebase
+
 Third create config.env file for more security and fill with your private key of the wallet and port like this:
 ```
 PK=PrivateKeyWallet
