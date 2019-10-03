@@ -20,6 +20,7 @@ Faucet web application for NEM testnet, local test and web deployment-hosting pr
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes this will use the API-Local folder and Client folder. See API-Firebase to deployment in firebase functions.
 
 ### Prerequisites
+Have an account in NEM-Wallet.
 For local purpose you will need to install NodeJS and NPM.
 For Deploying-Hosting purpose you will need to have a firebase account with [blaze](https://firebase.google.com/pricing/?hl=es-419) plan.
 
@@ -34,7 +35,7 @@ cd Faucet-NEM-Testnet
 ```
 Install dependencies.
 ```
-npm init
+npm install
 ```
 This will install the following dependecies:
 * express
@@ -61,8 +62,7 @@ index.html
 For Deploy-hosting in firebase see [here](https://github.com/AlexanderPalencia/Faucet-NEM-Testnet/tree/master/API-Firebase).
 
 ## Supported features and usability
-### XEM can be ordered every 5 min (for testing you can change this easily).
-### XEM are send randomly between 1 or 20 XEM every transaction.
-### 
-
-
+* XEM can be ordered every 5 min (for testing you can change this easily).
+* XEM are send randomly between 1 or 20 XEM every transaction.
+* Both Application (Client and API) handle errors these can be seen in the client and in the console of your API.
+* 
